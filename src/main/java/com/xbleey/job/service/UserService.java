@@ -35,7 +35,7 @@ public class UserService {
     }
 
     public User getOneByName(String username) {
-        return userDao.getFirstByName(username);
+        return userDao.getFirstByUsername(username);
     }
 
     public User getOneById(Integer id) {

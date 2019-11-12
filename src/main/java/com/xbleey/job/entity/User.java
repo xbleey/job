@@ -33,7 +33,7 @@ public class User implements Serializable {
     private Integer id;
 
     @Column(name = "username")
-    private String name;
+    private String username;
 
     @Column(name = "password")
     private String password;
@@ -41,13 +41,17 @@ public class User implements Serializable {
     @Column(name = "role")
     private String role;
 
-    public User(String name, String password, String role) {
-        this.name = name;
+    public User(String username, String password, String role) {
+        this.username = username;
         this.password = password;
         this.role = role;
     }
 
     public User() {
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public Integer getId() {
@@ -58,12 +62,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -86,7 +90,7 @@ public class User implements Serializable {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
                 '}';

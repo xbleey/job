@@ -27,7 +27,7 @@ class UserTests {
 
     @Test
     void updateUsers() {
-        user.setName("boy");
+        user.setUsername("boy");
         user.setId(3);
         System.out.println(userService.updateUser(user));
         System.out.println(userService.getAllUsers().toString());

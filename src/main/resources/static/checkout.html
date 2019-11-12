@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://getbootstrap.com/docs/4.3/examples/checkout/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>个人信息</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="./css/form-validation.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container">
+    <div class="py-5 text-center">
+
+        <h2>个人就业信息</h2>
+        <p class="lead">如实填写个人信息，确保上传至就业平台准确无误。</p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12 order-md-1">
+            <h4 class="mb-3">简单个人信息</h4>
+            <form class="needs-validation" novalidate="">
+
+                <div class="mb-3">
+                    <label for="username">姓名</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="username" placeholder="请输入姓名" required="">
+                        <div class="invalid-feedback" style="width: 100%;">
+                            姓名是必填项目。
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="d-block my-3">
+                    <label for="male">性别</label>
+                    <div class="custom-control custom-radio">
+                        <input id="male" name="paymentMethod" type="radio" class="custom-control-input" checked=""
+                               required="">
+                        <label class="custom-control-label" for="male">男性</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="female" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                        <label class="custom-control-label" for="female">女性</label>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+                <h4 class="mb-3">学习经历</h4>
+
+                <div class="mb-3">
+                    <label for="major">专业 <span class="text-muted"></span></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="major" placeholder="输入你最近学习经历的专业" required="">
+                        <div class="invalid-feedback">
+                            专业是必填项目。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="kind">专业类别</label>
+                        <select class="custom-select d-block w-100" id="kind" required="">
+                            <option value="">请选择...</option>
+                            <option>哲学</option>
+                            <option>经济学</option>
+                            <option>法学</option>
+                            <option>教育学</option>
+                            <option>文学</option>
+                            <option>历史学</option>
+                            <option>理学</option>
+                            <option>工学</option>
+                            <option>农学</option>
+                            <option>医学</option>
+                            <option>军事学</option>
+                            <option>管理学</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            请选择一个专业类别。
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="education">学历</label>
+                        <select class="custom-select d-block w-100" id="education" required="">
+                            <option value="">请选择...</option>
+                            <option>高中</option>
+                            <option>专科</option>
+                            <option>本科</option>
+                            <option>硕士研究生</option>
+                            <option>博士研究生</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            请选择一个学历。
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+
+                <h4 class="mb-3">就业经历</h4>
+
+                <div class="d-block my-3" id="jobWay">
+                    <div class="custom-control custom-radio">
+                        <input id="society" name="jobWay" type="radio" class="custom-control-input" checked=""
+                               required="">
+                        <label class="custom-control-label" for="society">就业创业</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="state" name="jobWay" type="radio" class="custom-control-input" required="">
+                        <label class="custom-control-label" for="state">国家机关/事业单位</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="advanced" name="jobWay" type="radio" class="custom-control-input"
+                               required="">
+                        <label class="custom-control-label" for="advanced">升学考研</label>
+                    </div>
+                </div>
+                <div class="row" id="jobInput">
+                    <div class="col-md-6 mb-3">
+                        <label for="cc-name">就业方向</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                        <small class="text-muted">选择一个大类</small>
+                        <div class="invalid-feedback">
+                            Name on card is required
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-expiration">薪资水平</label>
+                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                        <small class="text-muted">单位：元</small>
+                        <div class="invalid-feedback">
+                            Expiration date required
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-cvv">工作年限</label>
+                        <input type="text" class="form-control" id="cc-cvv" placeholder="请输入一个非负整数" required="">
+                        <small class="text-muted">最低，单位：年</small>
+                        <div class="invalid-feedback">
+                            Security code required
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2017-2019 Company Name</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://getbootstrap.com/docs/4.3/examples/checkout/#">Privacy</a>
+            </li>
+            <li class="list-inline-item"><a href="https://getbootstrap.com/docs/4.3/examples/checkout/#">Terms</a></li>
+            <li class="list-inline-item"><a href="https://getbootstrap.co·m/docs/4.3/examples/checkout/#">Support</a>
+            </li>
+        </ul>
+    </footer>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="./js/form-validation.js"></script>
+<script>
+    $("#advanced").on("click", function () {
+        $("#cc-name").removeAttr("required");
+        $("#cc-expiration").removeAttr("required");
+        $("#cc-cvv").removeAttr("required");
+        $("#jobInput").hide();
+    })
+    $("#society,#state").on("click", function () {
+        $("#cc-name").attr("required", "");
+        $("#cc-expiration").attr("required", "");
+        $("#cc-cvv").attr("required", "");
+        $("#jobInput").show();
+    })
+</script>
+</body>
+</html>
