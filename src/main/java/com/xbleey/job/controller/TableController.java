@@ -1,8 +1,8 @@
 /**
  * Copyright (C), 2019-2019, XXX有限公司
- * FileName: IndexController
+ * FileName: TableController
  * Author:   11580
- * Date:     2019/11/12 0012 19:53
+ * Date:     2019/11/14 0014 11:48
  * Description:
  * History:
  * <author>          <time>          <version>          <desc>
@@ -10,7 +10,8 @@
  */
 package com.xbleey.job.controller;
 
-import com.xbleey.job.service.UserService;
+import com.xbleey.job.entity.WordsMap;
+import com.xbleey.job.service.StudentService;
 import com.xbleey.job.utils.LoginSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,21 +25,27 @@ import javax.servlet.http.HttpServletRequest;
  * 〈〉
  *
  * @author 11580
- * @create 2019/11/12 0012
+ * @create 2019/11/14 0014
  * @since 1.0.0
  */
 @Controller
-public class IndexController {
+public class TableController {
 
     @Autowired
-    UserService userService;
+    StudentService studentService;
+
+    @Autowired
+    WordsMap wordsMap;
+
     @Autowired
     LoginSession loginSession;
 
-    @GetMapping(value = {"/index", "/"})
-    public String index(Model model, HttpServletRequest request) {
+    @GetMapping(value = "/tables")
+    public String goTables(Model model, HttpServletRequest request) {
         loginSession.isLogin(model, request);
-        return "index";
+        model.addAttribute("students", studentService.findAllStudent());
+        model.addAttribute("wordsMap", wordsMap);
+        return "tables";
     }
 }
  

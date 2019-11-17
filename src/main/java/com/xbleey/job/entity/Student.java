@@ -52,7 +52,7 @@ public class Student {
     private Integer jobWay;
 
     @Column(name = "job_road")
-    private String jobRoad;
+    private Integer jobRoad;
 
     @Column(name = "money")
     private Integer money;
@@ -60,25 +60,6 @@ public class Student {
     @Column(name = "year")
     private Integer jobYear;
 
-    public Student(Integer userId, String stuName, String stuSex, String major, Integer majorKind, Integer education, Integer jobWay, String jobRoad, Integer money, Integer jobYear) {
-        this.userId = userId;
-        this.stuName = stuName;
-        this.stuSex = stuSex;
-        this.major = major;
-        this.majorKind = majorKind;
-        this.education = education;
-        this.jobWay = jobWay;
-        this.jobRoad = jobRoad;
-        this.money = money;
-        this.jobYear = jobYear;
-    }
-
-    public Student() {
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
 
     public Integer getStuId() {
         return stuId;
@@ -144,11 +125,11 @@ public class Student {
         this.jobWay = jobWay;
     }
 
-    public String getJobRoad() {
+    public Integer getJobRoad() {
         return jobRoad;
     }
 
-    public void setJobRoad(String jobRoad) {
+    public void setJobRoad(Integer jobRoad) {
         this.jobRoad = jobRoad;
     }
 
@@ -179,7 +160,7 @@ public class Student {
                 ", majorKind=" + majorKind +
                 ", education=" + education +
                 ", jobWay=" + jobWay +
-                ", jobRoad='" + jobRoad + '\'' +
+                ", jobRoad=" + jobRoad +
                 ", money=" + money +
                 ", jobYear=" + jobYear +
                 '}';

@@ -11,11 +11,16 @@
 package com.xbleey.job.controller;
 
 import com.xbleey.job.entity.Student;
+import com.xbleey.job.entity.WordsMap;
+import com.xbleey.job.service.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -28,16 +33,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class CheckoutController {
 
+    Logger logger = LoggerFactory.getLogger(CheckoutController.class);
+
+    @Autowired
+    StudentService studentService;
+    @Autowired
+    WordsMap wordsMap;
+
     @GetMapping(value = "/checkout/{id}")
-    public String goCheckout(@PathVariable(value = "id") Integer stuId) {
-        System.out.println(stuId);
-        return "redirect:/checkout.html";
+    public String goCheckout(Model model, @PathVariable(value = "id") Integer userId) {
+        model.addAttribute("userId", userId);
+        return "checkout";
     }
 
-    @ResponseBody
     @PostMapping(value = "/checkout")
-    public Student submitCheckout(Student student) {
-        return student;
+    public String submitCheckout(Student student) {
+        logger.info("studentMessage", studentService.saveStudent(student).toString());
+        return "redirect:/index";
     }
 }
  

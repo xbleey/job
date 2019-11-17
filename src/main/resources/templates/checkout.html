@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0052)https://getbootstrap.com/docs/4.3/examples/checkout/ -->
-<html lang="en">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -13,7 +13,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
 
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
 
     <style>
@@ -33,7 +33,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="./css/form-validation.css" rel="stylesheet">
+    <link href="/css/form-validation.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 <div class="container">
@@ -48,6 +48,8 @@
         <div class="col-md-12 order-md-1">
             <h4 class="mb-3">简单个人信息</h4>
             <form class="needs-validation" novalidate="" action="/checkout" method="post">
+
+                <input type="hidden" name="userId" th:value="${userId}">
 
                 <div class="mb-3">
                     <label for="username">姓名</label>
@@ -92,7 +94,7 @@
                 <div class="row">
                     <div class="col-md-5 mb-3">
                         <label for="kind">专业类别</label>
-                        <select class="custom-select d-block w-100" name="majorKind" id="kind" required="">
+                        <select class="custom-select d-block w-100" name="majorKind" id="kind" required="" >
                             <option value="">请选择...</option>
                             <option value="1">哲学</option>
                             <option value="2">经济学</option>
@@ -143,26 +145,49 @@
                     <div class="custom-control custom-radio">
                         <input id="advanced" name="jobWay" type="radio" class="custom-control-input"
                                value="3" required="">
-                        <label class="custom-control-label" for="advanced">升学考研</label>
+                            <label class="custom-control-label" for="advanced">升学考研</label>
                     </div>
                 </div>
                 <div class="row" id="jobInput">
                     <div class="col-md-6 mb-3">
                         <label for="cc-name">就业方向</label>
-                        <input type="text" name="jobRoad" class="form-control" id="cc-name" placeholder="" required="">
+                        <select class="custom-select d-block w-100" name="jobRoad" id="cc-name" required="">
+                            <option value="">请选择...</option>
+                            <option value="1">信息传输、软件和信息技术服务业</option>
+                            <option value="2">教育</option>
+                            <option value="3">制造业</option>
+                            <option value="4">公共管理、社会保障和社会组织</option>
+                            <option value="5">金融业</option>
+                            <option value="6">文化、体育和娱乐业</option>
+                            <option value="7">科学研究和技术服务业</option>
+                            <option value="8">卫生和社会工作</option>
+                            <option value="9">租赁和商务服务业</option>
+                            <option value="10">建筑业</option>
+                            <option value="11">批发和零售业</option>
+                            <option value="12">居民服务、修理和其他服务业</option>
+                            <option value="13">电力、热力、燃气及水生产和供应业</option>
+                            <option value="14">交通运输、仓储和邮政业</option>
+                            <option value="15">房地产业</option>
+                            <option value="16">农林牧渔业</option>
+                            <option value="17">住宿和餐饮业</option>
+                            <option value="18">水利、环境和公共设施管理业</option>
+                            <option value="19">军队</option>
+                            <option value="20">采矿业</option>
+                            <option value="21">国际组织</option>
+                        </select>
                         <small class="text-muted">选择一个大类</small>
                         <div class="invalid-feedback">
-                            Name on card is required
+                            就业方向是必填的！
                         </div>
                     </div>
 
                     <div class="col-md-3 mb-3">
                         <label for="cc-expiration">薪资水平</label>
-                        <input type="text" name="money" class="form-control" id="cc-expiration" placeholder=""
+                        <input type="text" name="money" class="form-control" id="cc-expiration" placeholder="输入正整数"
                                required="">
                         <small class="text-muted">单位：元</small>
                         <div class="invalid-feedback">
-                            Expiration date required
+                            薪资水平是必填的！
                         </div>
                     </div>
 
@@ -172,7 +197,7 @@
                                required="">
                         <small class="text-muted">最低，单位：年</small>
                         <div class="invalid-feedback">
-                            Security code required
+                            工作年限是必填的！
                         </div>
                     </div>
                 </div>
@@ -198,8 +223,8 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-<script src="./js/form-validation.js"></script>
-<script src="js/redirect.js"></script>
+<script src="/js/form-validation.js"></script>
+<script src="/js/redirect.js"></script>
 <script>
     $("#advanced").on("click", function () {
         $("#cc-name").removeAttr("required");

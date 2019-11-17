@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/")
-    public User SaveUser(User user) {
+    public User saveUser(User user) {
         return userService.saveUser(user);
     }
 

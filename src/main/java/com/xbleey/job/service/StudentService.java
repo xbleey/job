@@ -15,6 +15,8 @@ import com.xbleey.job.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * 〈一句话功能简述〉<br>
  * 〈〉
@@ -27,6 +29,10 @@ import org.springframework.stereotype.Service;
 public class StudentService {
     @Autowired
     StudentDao studentDao;
+
+    public List<Student> findAllStudent() {
+        return studentDao.findAll();
+    }
 
     public Student saveStudent(Student student) {
         Student savedStudent = studentDao.save(student);
