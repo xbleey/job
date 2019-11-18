@@ -62,7 +62,7 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             预计毕业学生(人数)
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">40,000</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${graduateNum}"></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-people-carry fa-2x text-gray-300"></i>
@@ -80,7 +80,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">平均薪酬
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">￥7800</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${'￥'+avgMoney}"></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -99,7 +99,7 @@
                                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1">就业比例</div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
-                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">81%</div>
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"  th:text="${jobProportion+'%'}">81%</div>
                                             </div>
                                             <div class="col">
                                                 <div class="progress progress-sm mr-2">
@@ -126,7 +126,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">就业方向
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${jobRoad}">18</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-map-signs fa-2x text-gray-300"></i>
@@ -144,7 +144,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">工作年限（平均）
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">0.8</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" th:text="${#numbers.formatDecimal(avgYear,1,2)}"></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -162,7 +162,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">吃肉水平</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"
-                                             th:text="${T(Math).abs(123)}"></div>
+                                             th:text="low"></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-drumstick-bite fa-2x text-gray-300"></i>

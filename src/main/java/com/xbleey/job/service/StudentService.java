@@ -34,6 +34,10 @@ public class StudentService {
         return studentDao.findAll();
     }
 
+    public Student findOneByUserId(Integer userId) {
+        return studentDao.findDistinctByUserId(userId);
+    }
+
     public Student saveStudent(Student student) {
         Student savedStudent = studentDao.save(student);
         return savedStudent;

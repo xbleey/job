@@ -10,12 +10,14 @@
  */
 package com.xbleey.job.controller;
 
+import com.xbleey.job.service.TipService;
 import com.xbleey.job.service.UserService;
 import com.xbleey.job.utils.LoginSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -34,11 +36,20 @@ public class IndexController {
     UserService userService;
     @Autowired
     LoginSession loginSession;
+    @Autowired
+    TipService tipService;
 
     @GetMapping(value = {"/index", "/"})
     public String index(Model model, HttpServletRequest request) {
         loginSession.isLogin(model, request);
+        tipService.loadTipValues(model);
         return "index";
+    }
+
+    @ResponseBody
+    @GetMapping(value = "/circleData")
+    public int[] getCircleData() {
+        return tipService.getCircleData();
     }
 }
  

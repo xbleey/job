@@ -43,6 +43,10 @@ public class CheckoutController {
     @GetMapping(value = "/checkout/{id}")
     public String goCheckout(Model model, @PathVariable(value = "id") Integer userId) {
         model.addAttribute("userId", userId);
+        model.addAttribute("wordsMap", wordsMap);
+        if (studentService.findOneByUserId(userId) != null) {
+            model.addAttribute("student", studentService.findOneByUserId(userId));
+        }
         return "checkout";
     }
 
@@ -51,6 +55,8 @@ public class CheckoutController {
         logger.info("studentMessage", studentService.saveStudent(student).toString());
         return "redirect:/index";
     }
+
+
 }
  
 

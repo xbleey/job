@@ -22,4 +22,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @since 1.0.0
  */
 public interface StudentDao extends JpaRepository<Student,Integer> {
+    public Student findDistinctByUserId(Integer userId);
 }

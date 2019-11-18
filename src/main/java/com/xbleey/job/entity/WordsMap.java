@@ -53,7 +53,7 @@ public class WordsMap {
         majorKindMap.put(6, "历史学");
         majorKindMap.put(7, "理学");
         majorKindMap.put(8, "工学");
-        majorKindMap.put(8, "农学");
+        majorKindMap.put(9, "农学");
         majorKindMap.put(10, "医学");
         majorKindMap.put(11, "军事学");
         majorKindMap.put(12, "管理学");
@@ -95,6 +95,7 @@ public class WordsMap {
         jobRoadMap.put(19, "军队");
         jobRoadMap.put(20, "采矿业");
         jobRoadMap.put(21, "国际组织");
+        jobRoadMap.put(22, "其他");
     }
 
     public static HashMap<Integer, String> getMajorKindMap() {
