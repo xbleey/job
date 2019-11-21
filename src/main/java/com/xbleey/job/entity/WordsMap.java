@@ -48,7 +48,7 @@ public class WordsMap {
         majorKindMap.put(1, "哲学");
         majorKindMap.put(2, "经济学");
         majorKindMap.put(3, "法学");
-        majorKindMap.put(4, "教育学");
+        majorKindMap.put(4, "文学");
         majorKindMap.put(5, "教育学");
         majorKindMap.put(6, "历史学");
         majorKindMap.put(7, "理学");
