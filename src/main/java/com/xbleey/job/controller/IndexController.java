@@ -43,6 +43,7 @@ public class IndexController {
     public String index(Model model, HttpServletRequest request) {
         loginSession.isLogin(model, request);
         tipService.loadTipValues(model);
+        model.addAttribute("moneyTotal", tipService.getMoneyTotal());
         return "index";
     }
 

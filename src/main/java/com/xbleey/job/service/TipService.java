@@ -40,10 +40,12 @@ public class TipService {
     private Integer jobRoad = 0;
     private float avgYear = 0;
 
+    private Integer jobNum = 0;
+
     private void getAllTips() {
         students = studentDao.findAll();
 
-        Integer jobNum = 0;
+        jobNum = 0;
         /*毕业人数*/
         graduateNum = students.size();
 
@@ -112,4 +114,34 @@ public class TipService {
         res[1] = 100 - res[0] - res[2];
         return res;
     }
+
+    public int[] getMoneyTotal() {
+        int[] level = new int[5];
+        for (Student s : students) {
+            if (s.getMoney() != null) {
+                int money = s.getMoney();
+                if (money <= 2000) {
+                    level[0]++;
+                    continue;
+                }if (money <= 5000) {
+                    level[1]++;
+                    continue;
+                }if (money <= 10000) {
+                    level[2]++;
+                    continue;
+                }if (money <= 15000) {
+                    level[3]++;
+                    continue;
+                }if (money <= 20000) {
+                    level[4]++;
+                    continue;
+                }
+            }
+        }
+        for(int i =0;i<level.length;i++){
+            level[i]=level[i]*100/jobNum;
+        }
+        return level;
+    }
+
 }
