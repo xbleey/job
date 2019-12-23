@@ -20,6 +20,7 @@ import javax.persistence.*;
  * @create 2019/11/12 0012
  * @since 1.0.0
  */
+
 @Entity
 public class Student {
 
@@ -60,6 +61,9 @@ public class Student {
     @Column(name = "year")
     private Integer jobYear;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Integer getStuId() {
         return stuId;
